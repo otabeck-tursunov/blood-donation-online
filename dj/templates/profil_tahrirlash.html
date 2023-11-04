@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %} Qon topshirish {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h3>Profil tahrirlash</h3>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Username</i></label>
+        <input type="text" class="form-control" name="username" id="username" value="{{user}}" readonly>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Ism:</i></label>
+        <input type="text" class="form-control" name="first_name" id="first_name" value="{{request.user.first_name}}" readonly>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Familiya:</i></label>
+        <input type="text" class="form-control" name="last_name" id="last_name" value="{{request.user.last_name}}" readonly>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID:</i></label>
+        <input type="email" class="form-control" name="email" id="email" value="{{request.user.email}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Telefon:</i></label>
+        <input type="tel" class="form-control" name="tel" id="tel" value="{{donor_profil.tel}}">
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Viloyat</i></label>
+        <input type="text" class="form-control" name="vil" id="state" value="{{donor_profil.vil}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Tuman:</i></label>
+        <input type="text" class="form-control" name="tuman" id="city" value="{{donor_profil.tuman}}">
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Manzil:</i></label>
+        <textarea class="form-control" id="address" name="manzil" rows="3">{{donor_profil.manzil}}</textarea>
+    </div>
+</div>
+
+<div class="row mt-2">
+<div class="form-group col-md-6">
+    <label><i style="font-weight: bold;">Jins:</i></label>
+    <input type="text" class="form-control" name="jins" value="{{donor_profil.jins}}" readonly>
+  </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Qon guruh:</i></label>
+        <input type="text" class="form-control" name="qon_guruh" value="{{donor_profil.qon_guruh}}" readonly>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Profil rasm:</i><a href="{{donor_profil.rasm.url}}">Joriy profilni ko'rish uchun shu yerni bosing<picture></picture></a></label>
+        <input type="file" class="form-control" id="image" name="rasm">
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Tug'ilgan sana:</i></label>
+        <input type="text" class="form-control" id="date" name="t_sana" value="{{donor_profil.t_sana}}" readonly>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Profilni yangilash</button>
+</form>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Profil yangilandi");
+    document.location = "/profil"
+    {% endif %}
+</script>
+{% endblock %}
+

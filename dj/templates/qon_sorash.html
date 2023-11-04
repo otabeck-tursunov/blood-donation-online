@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %} Qon topshirish {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h3><i style="font-weight: bold;    ">Qon so'rash</i></h3>
+    <form method="POST"> {% csrf_token %}
+        <div class="row mt-4">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">F.I.O</i></label>
+                <input type="text" class="form-control" name="FIO" id="name" placeholder="ism-sharifingizni kiriting..."
+                       required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Email</i></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email..." required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Telefon</i></label>
+                <input type="tel" class="form-control" name="tel" id="phone" placeholder="telefon raqam..."
+                       required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Viloyat</i></label>
+                <input type="text" class="form-control" name="vil" id="state" placeholder="viloyat..." required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Tuman</i></label>
+                <input type="text" class="form-control" name="tuman" id="city" placeholder="tuman..." required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Manzil</i></label>
+                <textarea class="form-control" id="address" name="manzil" rows="3" placeholder="manzil..."
+                          required></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Qon guruh</i></label>
+                <select class="form-control" name="qon_guruh" required>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Sana</i></label>
+                <input type="date" class="form-control" id="date" name="sana" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Tasdqilash</button>
+    </form>
+</div>
+{% endblock %}

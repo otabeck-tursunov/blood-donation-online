@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Qon topshirish {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+<h1>Qon guruhiga ko'ra mavjud donorlar</h1>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for guruh in guruhlar %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm border-danger">
+            <div class="card-body">
+              <h3 class="card-text">Qon guruh: {{guruh.nom}}</h3>
+              <h3 class="card-text">Ko'gillilar: {{guruh.jami}}</h3>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/donorlar/{{guruh.id}}/" class="btn btn-sm btn-outline-danger">Barchasini ko'rish</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

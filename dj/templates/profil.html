@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %} Qon topshirish {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img src="{{donor_profil.rasm.url}}" alt="" width="310px" height="270px">
+                <br><br><br>
+                {% if donor_profil.topshirishga_tayyor %}
+                <a href="/status_belgilash/" class="btn btn-success" style="width: 15rem; font-size: 23px;">Men qon topshirishga tayyorman</a>
+              {% else %}
+                <a href="/status_belgilash/" class="btn btn-danger" style="width: 15rem; font-size: 19px;">Men qon topshirishga tayyor emasman</a>
+              {% endif %}
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div>
+                <div>
+                    <br>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Username:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{user}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>F.I.O:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{user.get_full_name}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Email:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{user.email}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Telefon:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.tel}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Jins</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.jins}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Tug'ilgan sana:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.t_sana}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Viloyat:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.vil}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Tuman:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.tuman}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Manzil:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.manzil}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h3>Qon guruh:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor_profil.qon_guruh}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <a href="/profil_tahrirlash/" class="btn btn-outline-danger mt-4">Tahrirlash</a>
+            </div>
+        </div>
+</div>
+</div>
+{% endblock %}

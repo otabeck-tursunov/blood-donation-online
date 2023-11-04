@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %} Qon topshiruvchi {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="{{donor.rasm.url}}" alt="" width="310px" height="270px">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="profile-tab">
+                <div class="tab-pane">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h3>F.I.O:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.donor.get_full_name}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Qon guruh:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.qon_guruh}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Jins:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.jins}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Email:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.donor.email}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Telefon:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.tel}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Viloyat:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.vil}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Tuman:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.tuman}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Manzil:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.manzil}}</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-5">
+                            <h3>Tug'ilgan sana:</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{donor.t_sana}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %} Donar bo'lish {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h4>Donor sifatida ro'yxatdan o'tish</h4>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="row mt-4">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Username</i></label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username"
+                       required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Ism</i></label>
+                <input type="text" class="form-control" name="ism" id="first_name" placeholder="ism..."
+                       required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Familiya</i></label>
+                <input type="text" class="form-control" name="fam" id="last_name" placeholder="familiya..."
+                       required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Email ID</i></label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email..." required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Telefon</i></label>
+                <input type="tel" class="form-control" name="tel" id="phone" placeholder="telefon raqam..."
+                       required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Viloyat</i></label>
+                <input type="text" class="form-control" name="vil" id="state" placeholder="viloyat..." required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Tuman</i></label>
+                <input type="text" class="form-control" name="tuman" id="city" placeholder="tuman..." required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Manzil</i></label>
+                <textarea class="form-control" id="address" name="manzil" rows="3" placeholder="manzil..."
+                          required></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Jins</i></label>
+                <div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jins" id="male" value="Erkak">
+                        <label class="form-check-label">Erkak</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jins" id="female" value="Ayol">
+                        <label class="form-check-label">Ayol</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Qon guruh</i></label>
+                <select class="form-control" name="qon_guruh" required>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Profil rasm</i></label>
+                <input type="file" class="form-control" id="image" name="rasm" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Tug'ilgan sana</i></label>
+                <input type="date" class="form-control" id="date" name="t_sana" required>
+            </div>
+        </div>
+
+        <div class="row mt-1">
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Parol</i></label>
+                <input type="password" class="form-control" name="parol" id="password" placeholder="parol..."
+                       required>
+            </div>
+            <div class="form-group col-md-6">
+                <label><i style="font-weight: bold;">Parolni tasdiqlash</i></label>
+                <input type="password" class="form-control" name="parol_tasdiqlash" id="confirm_password"
+                       placeholder="parol qayta..." required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Tasdqilash</button>
+    </form>
+</div>
+{% endblock %}
